@@ -13,10 +13,10 @@ describe('OAuth2Strategy', function() {
     }
 
     CustomStore.prototype.store = function(req, meta, cb) {
-      if (req.url === '/error') { return cb(new Error('something went wrong storing state')); }
-      if (req.url === '/exception') { throw new Error('something went horribly wrong storing state'); }
+      if (req.path === '/error') { return cb(new Error('something went wrong storing state')); }
+      if (req.path === '/exception') { throw new Error('something went horribly wrong storing state'); }
       
-      if (req.url !== '/me') { return cb(new Error('incorrect req argument')); }
+      if (req.path !== '/me') { return cb(new Error('incorrect req argument')); }
       if (meta.authorizationURL !== 'https://www.example.com/oauth2/authorize') { return cb(new Error('incorrect meta.authorizationURL argument')); }
       if (meta.tokenURL !== 'https://www.example.com/oauth2/token') { return cb(new Error('incorrect meta.tokenURL argument')); }
       if (meta.clientID !== 'ABC123') { return callback(new Error('incorrect meta.clientID argument')); }
@@ -26,10 +26,10 @@ describe('OAuth2Strategy', function() {
     };
     
     CustomStore.prototype.verify = function(req, state, meta, cb) {
-      if (req.url === '/error') { return cb(new Error('something went wrong verifying state')); }
-      if (req.url === '/exception') { throw new Error('something went horribly wrong verifying state'); }
+      if (req.path === '/error') { return cb(new Error('something went wrong verifying state')); }
+      if (req.path === '/exception') { throw new Error('something went horribly wrong verifying state'); }
       
-      if (req.url !== '/auth/example/callback') { return cb(new Error('incorrect req argument')); }
+      if (req.path !== '/auth/example/callback') { return cb(new Error('incorrect req argument')); }
       if (state !== 'foos7473') { return cb(new Error('incorrect state argument')); }
       if (meta.authorizationURL !== 'https://www.example.com/oauth2/authorize') { return cb(new Error('incorrect meta.authorizationURL argument')); }
       if (meta.tokenURL !== 'https://www.example.com/oauth2/token') { return cb(new Error('incorrect meta.tokenURL argument')); }
@@ -63,7 +63,7 @@ describe('OAuth2Strategy', function() {
             })
             .req(function(req) {
               request = req;
-              req.url = '/me';
+              req.path = '/me';
             })
             .authenticate();
         });
@@ -88,7 +88,7 @@ describe('OAuth2Strategy', function() {
             })
             .req(function(req) {
               request = req;
-              req.url = '/error';
+              req.path = '/error';
             })
             .authenticate();
         });
@@ -110,7 +110,7 @@ describe('OAuth2Strategy', function() {
             })
             .req(function(req) {
               request = req;
-              req.url = '/exception';
+              req.path = '/exception';
             })
             .authenticate();
         });
@@ -166,10 +166,10 @@ describe('OAuth2Strategy', function() {
             .req(function(req) {
               request = req;
           
-              req.url = '/auth/example/callback';
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
-              req.query.state = 'foos7473';
+              req.path = '/auth/example/callback';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.queryStringParameters.state = 'foos7473';
             })
             .authenticate();
         });
@@ -202,10 +202,10 @@ describe('OAuth2Strategy', function() {
             .req(function(req) {
               request = req;
           
-              req.url = '/error';
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
-              req.query.state = 'foos7473';
+              req.path = '/error';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.queryStringParameters.state = 'foos7473';
             })
             .authenticate();
         });
@@ -229,10 +229,10 @@ describe('OAuth2Strategy', function() {
             .req(function(req) {
               request = req;
           
-              req.url = '/exception';
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
-              req.query.state = 'foos7473';
+              req.path = '/exception';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.queryStringParameters.state = 'foos7473';
             })
             .authenticate();
         });
@@ -299,10 +299,10 @@ describe('OAuth2Strategy', function() {
             .req(function(req) {
               request = req;
         
-              req.url = '/auth/example/callback';
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
-              req.query.state = 'foos7473';
+              req.path = '/auth/example/callback';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.queryStringParameters.state = 'foos7473';
             })
             .authenticate();
         });
@@ -364,10 +364,10 @@ describe('OAuth2Strategy', function() {
             .req(function(req) {
               request = req;
         
-              req.url = '/auth/example/callback';
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
-              req.query.state = 'foos7473';
+              req.path = '/auth/example/callback';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.queryStringParameters.state = 'foos7473';
             })
             .authenticate();
         });

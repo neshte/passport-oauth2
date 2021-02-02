@@ -349,8 +349,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.url = '/auth/example/callback/alt2';
-            req.headers.host = 'www.example.net';
+            req.path = '/auth/example/callback/alt2';
+            req.headers['Host'] = 'www.example.net';
             req.connection = { encrypted: true };
           })
           .authenticate({ callbackURL: '/auth/example/callback/alt2' });
@@ -489,8 +489,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -543,8 +543,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -597,8 +597,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate({ callbackURL: 'https://www.example.net/auth/example/callback/alt1' });
       });
@@ -651,10 +651,10 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.url = '/auth/example/callback/alt2';
-            req.headers.host = 'www.example.net';
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.path = '/auth/example/callback/alt2';
+            req.headers['Host'] = 'www.example.net';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
             req.connection = { encrypted: true };
           })
           .authenticate({ callbackURL: '/auth/example/callback/alt2' });
@@ -709,8 +709,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -765,8 +765,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -822,8 +822,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -869,8 +869,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -910,8 +910,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -943,8 +943,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.error = 'access_denied';
+            req.queryStringParameters = {};
+            req.queryStringParameters.error = 'access_denied';
           })
           .authenticate();
       });
@@ -976,9 +976,9 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.error = 'access_denied';
-            req.query.error_description = 'Why oh why?';
+            req.queryStringParameters = {};
+            req.queryStringParameters.error = 'access_denied';
+            req.queryStringParameters.error_description = 'Why oh why?';
           })
           .authenticate();
       });
@@ -1009,8 +1009,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.error = 'invalid_scope';
+            req.queryStringParameters = {};
+            req.queryStringParameters.error = 'invalid_scope';
           })
           .authenticate();
       });
@@ -1044,9 +1044,9 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.error = 'invalid_scope';
-            req.query.error_description = 'The scope is invalid';
+            req.queryStringParameters = {};
+            req.queryStringParameters.error = 'invalid_scope';
+            req.queryStringParameters.error_description = 'The scope is invalid';
           })
           .authenticate();
       });
@@ -1080,10 +1080,10 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.error = 'invalid_scope';
-            req.query.error_description = 'The scope is invalid';
-            req.query.error_uri = 'http://www.example.com/oauth2/help';
+            req.queryStringParameters = {};
+            req.queryStringParameters.error = 'invalid_scope';
+            req.queryStringParameters.error_description = 'The scope is invalid';
+            req.queryStringParameters.error_uri = 'http://www.example.com/oauth2/help';
           })
           .authenticate();
       });
@@ -1123,8 +1123,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -1162,8 +1162,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -1202,8 +1202,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -1242,8 +1242,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -1282,8 +1282,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -1320,8 +1320,8 @@ describe('OAuth2Strategy', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -1357,8 +1357,8 @@ describe('OAuth2Strategy', function() {
               done();
             })
             .req(function(req) {
-              req.url = '/auth/example';
-              req.headers.host = 'www.example.net';
+              req.path = '/auth/example';
+              req.headers['Host'] = 'www.example.net';
               req.connection = { encrypted: true };
             })
             .authenticate();
@@ -1379,8 +1379,8 @@ describe('OAuth2Strategy', function() {
               done();
             })
             .req(function(req) {
-              req.url = '/auth/example';
-              req.headers.host = 'www.example.net';
+              req.path = '/auth/example';
+              req.headers['Host'] = 'www.example.net';
               req.connection = {};
             })
             .authenticate();
@@ -1394,7 +1394,7 @@ describe('OAuth2Strategy', function() {
       
       describe('from behind a secure proxy', function() {
         
-        describe('that is trusted by app and sets x-forwarded-proto', function() {
+        describe('that is trusted by app and sets X-Forwarded-Proto', function() {
           var url;
 
           before(function(done) {
@@ -1410,9 +1410,9 @@ describe('OAuth2Strategy', function() {
                   }
                 }
             
-                req.url = '/auth/example';
-                req.headers.host = 'www.example.net';
-                req.headers['x-forwarded-proto'] = 'https';
+                req.path = '/auth/example';
+                req.headers['Host'] = 'www.example.net';
+                req.headers['X-Forwarded-Proto'] = 'https';
                 req.connection = {};
               })
               .authenticate();
@@ -1421,9 +1421,9 @@ describe('OAuth2Strategy', function() {
           it('should be redirected', function() {
             expect(url).to.equal('https://www.example.com/oauth2/authorize?response_type=code&redirect_uri=https%3A%2F%2Fwww.example.net%2Fauth%2Fexample%2Fcallback&client_id=ABC123');
           });
-        }); // that is trusted by app and sets x-forwarded-proto
+        }); // that is trusted by app and sets X-Forwarded-Proto
         
-        describe('that is trusted by app and sets x-forwarded-proto and x-forwarded-host', function() {
+        describe('that is trusted by app and sets X-Forwarded-Proto and X-Forwarded-Host', function() {
           var url;
 
           before(function(done) {
@@ -1439,10 +1439,10 @@ describe('OAuth2Strategy', function() {
                   }
                 }
             
-                req.url = '/auth/example';
-                req.headers.host = 'server.internal';
-                req.headers['x-forwarded-proto'] = 'https';
-                req.headers['x-forwarded-host'] = 'www.example.net';
+                req.path = '/auth/example';
+                req.headers['Host'] = 'server.internal';
+                req.headers['X-Forwarded-Proto'] = 'https';
+                req.headers['X-Forwarded-Host'] = 'www.example.net';
                 req.connection = {};
               })
               .authenticate();
@@ -1451,9 +1451,9 @@ describe('OAuth2Strategy', function() {
           it('should be redirected', function() {
             expect(url).to.equal('https://www.example.com/oauth2/authorize?response_type=code&redirect_uri=https%3A%2F%2Fwww.example.net%2Fauth%2Fexample%2Fcallback&client_id=ABC123');
           });
-        }); // that is trusted by app and sets x-forwarded-proto and x-forwarded-host
+        }); // that is trusted by app and sets X-Forwarded-Proto and X-Forwarded-Host
         
-        describe('that is not trusted by app and sets x-forwarded-proto', function() {
+        describe('that is not trusted by app and sets X-Forwarded-Proto', function() {
           var url;
 
           before(function(done) {
@@ -1469,9 +1469,9 @@ describe('OAuth2Strategy', function() {
                   }
                 }
             
-                req.url = '/auth/example';
-                req.headers.host = 'www.example.net';
-                req.headers['x-forwarded-proto'] = 'https';
+                req.path = '/auth/example';
+                req.headers['Host'] = 'www.example.net';
+                req.headers['X-Forwarded-Proto'] = 'https';
                 req.connection = {};
               })
               .authenticate();
@@ -1480,9 +1480,9 @@ describe('OAuth2Strategy', function() {
           it('should be redirected', function() {
             expect(url).to.equal('https://www.example.com/oauth2/authorize?response_type=code&redirect_uri=http%3A%2F%2Fwww.example.net%2Fauth%2Fexample%2Fcallback&client_id=ABC123');
           });
-        }); // that is trusted by app and sets x-forwarded-proto and x-forwarded-host
+        }); // that is trusted by app and sets X-Forwarded-Proto and X-Forwarded-Host
         
-        describe('that is not trusted by app and sets x-forwarded-proto and x-forwarded-host', function() {
+        describe('that is not trusted by app and sets X-Forwarded-Proto and X-Forwarded-Host', function() {
           var url;
 
           before(function(done) {
@@ -1498,10 +1498,10 @@ describe('OAuth2Strategy', function() {
                   }
                 }
             
-                req.url = '/auth/example';
-                req.headers.host = 'server.internal';
-                req.headers['x-forwarded-proto'] = 'https';
-                req.headers['x-forwarded-host'] = 'www.example.net';
+                req.path = '/auth/example';
+                req.headers['Host'] = 'server.internal';
+                req.headers['X-Forwarded-Proto'] = 'https';
+                req.headers['X-Forwarded-Host'] = 'www.example.net';
                 req.connection = {};
               })
               .authenticate();
@@ -1510,9 +1510,9 @@ describe('OAuth2Strategy', function() {
           it('should be redirected', function() {
             expect(url).to.equal('https://www.example.com/oauth2/authorize?response_type=code&redirect_uri=http%3A%2F%2Fserver.internal%2Fauth%2Fexample%2Fcallback&client_id=ABC123');
           });
-        }); // that is not trusted by app and sets x-forwarded-proto and x-forwarded-host
+        }); // that is not trusted by app and sets X-Forwarded-Proto and X-Forwarded-Host
         
-        describe('that is trusted by strategy and sets x-forwarded-proto', function() {
+        describe('that is trusted by strategy and sets X-Forwarded-Proto', function() {
           var strategy = new OAuth2Strategy({
             authorizationURL: 'https://www.example.com/oauth2/authorize',
             tokenURL: 'https://www.example.com/oauth2/token',
@@ -1533,9 +1533,9 @@ describe('OAuth2Strategy', function() {
                 done();
               })
               .req(function(req) {
-                req.url = '/auth/example';
-                req.headers.host = 'www.example.net';
-                req.headers['x-forwarded-proto'] = 'https';
+                req.path = '/auth/example';
+                req.headers['Host'] = 'www.example.net';
+                req.headers['X-Forwarded-Proto'] = 'https';
                 req.connection = {};
               })
               .authenticate();
@@ -1544,9 +1544,9 @@ describe('OAuth2Strategy', function() {
           it('should be redirected', function() {
             expect(url).to.equal('https://www.example.com/oauth2/authorize?response_type=code&redirect_uri=https%3A%2F%2Fwww.example.net%2Fauth%2Fexample%2Fcallback&client_id=ABC123');
           });
-        }); // that is trusted by strategy and sets x-forwarded-proto
+        }); // that is trusted by strategy and sets X-Forwarded-Proto
         
-        describe('that is trusted by strategy and sets x-forwarded-proto and x-forwarded-host', function() {
+        describe('that is trusted by strategy and sets X-Forwarded-Proto and X-Forwarded-Host', function() {
           var strategy = new OAuth2Strategy({
             authorizationURL: 'https://www.example.com/oauth2/authorize',
             tokenURL: 'https://www.example.com/oauth2/token',
@@ -1567,10 +1567,10 @@ describe('OAuth2Strategy', function() {
                 done();
               })
               .req(function(req) {
-                req.url = '/auth/example';
-                req.headers.host = 'server.internal';
-                req.headers['x-forwarded-proto'] = 'https';
-                req.headers['x-forwarded-host'] = 'www.example.net';
+                req.path = '/auth/example';
+                req.headers['Host'] = 'server.internal';
+                req.headers['X-Forwarded-Proto'] = 'https';
+                req.headers['X-Forwarded-Host'] = 'www.example.net';
                 req.connection = {};
               })
               .authenticate();
@@ -1579,7 +1579,7 @@ describe('OAuth2Strategy', function() {
           it('should be redirected', function() {
             expect(url).to.equal('https://www.example.com/oauth2/authorize?response_type=code&redirect_uri=https%3A%2F%2Fwww.example.net%2Fauth%2Fexample%2Fcallback&client_id=ABC123');
           });
-        }); // that is trusted by strategy and sets x-forwarded-proto and x-forwarded-host
+        }); // that is trusted by strategy and sets X-Forwarded-Proto and X-Forwarded-Host
         
       }); // from behind a secure proxy
     
@@ -1625,10 +1625,10 @@ describe('OAuth2Strategy', function() {
               done();
             })
             .req(function(req) {
-              req.url = '/auth/example';
-              req.headers.host = 'www.example.net';
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.path = '/auth/example';
+              req.headers['Host'] = 'www.example.net';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
               req.connection = { encrypted: true };
             })
             .authenticate();
@@ -1682,10 +1682,10 @@ describe('OAuth2Strategy', function() {
               done();
             })
             .req(function(req) {
-              req.url = '/auth/example';
-              req.headers.host = 'www.example.net';
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.path = '/auth/example';
+              req.headers['Host'] = 'www.example.net';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
               req.connection = {};
             })
             .authenticate();

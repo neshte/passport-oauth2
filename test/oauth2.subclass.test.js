@@ -124,8 +124,8 @@ describe('OAuth2Strategy subclass', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate({ type: 'web_server' });
       });
@@ -189,8 +189,8 @@ describe('OAuth2Strategy subclass', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });
@@ -232,8 +232,8 @@ describe('OAuth2Strategy subclass', function() {
             done();
           })
           .req(function(req) {
-            req.query = {};
-            req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
+            req.queryStringParameters = {};
+            req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
           })
           .authenticate();
       });

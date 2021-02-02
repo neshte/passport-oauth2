@@ -195,9 +195,9 @@ describe('OAuth2Strategy', function() {
             .req(function(req) {
               request = req;
             
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
-              req.query.state = 'DkbychwKu8kBaJoLE5yeR5NK';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.queryStringParameters.state = 'DkbychwKu8kBaJoLE5yeR5NK';
               req.session = {};
               req.session['oauth2:www.example.com'] = {};
               req.session['oauth2:www.example.com']['state'] = 'DkbychwKu8kBaJoLE5yeR5NK';
@@ -235,9 +235,9 @@ describe('OAuth2Strategy', function() {
             .req(function(req) {
               request = req;
             
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
-              req.query.state = 'DkbychwKu8kBaJoLE5yeR5NK';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.queryStringParameters.state = 'DkbychwKu8kBaJoLE5yeR5NK';
               req.session = {};
               req.session['oauth2:www.example.com'] = {};
               req.session['oauth2:www.example.com']['state'] = 'DkbychwKu8kBaJoLE5yeR5NK';
@@ -276,9 +276,9 @@ describe('OAuth2Strategy', function() {
             .req(function(req) {
               request = req;
             
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
-              req.query.state = 'DkbychwKu8kBaJoLE5yeR5NK-WRONG';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.queryStringParameters.state = 'DkbychwKu8kBaJoLE5yeR5NK-WRONG';
               req.session = {};
               req.session['oauth2:www.example.com'] = {};
               req.session['oauth2:www.example.com']['state'] = 'DkbychwKu8kBaJoLE5yeR5NK';
@@ -314,9 +314,9 @@ describe('OAuth2Strategy', function() {
             .req(function(req) {
               request = req;
             
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
-              req.query.state = 'DkbychwKu8kBaJoLE5yeR5NK';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.queryStringParameters.state = 'DkbychwKu8kBaJoLE5yeR5NK';
               req.session = {};
             })
             .authenticate();
@@ -346,9 +346,9 @@ describe('OAuth2Strategy', function() {
             .req(function(req) {
               request = req;
             
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
-              req.query.state = 'DkbychwKu8kBaJoLE5yeR5NK';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.queryStringParameters.state = 'DkbychwKu8kBaJoLE5yeR5NK';
               req.session = {};
               req.session['oauth2:www.example.com'] = {};
             })
@@ -378,9 +378,9 @@ describe('OAuth2Strategy', function() {
             .req(function(req) {
               request = req;
             
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
-              req.query.state = 'DkbychwKu8kBaJoLE5yeR5NK';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.queryStringParameters.state = 'DkbychwKu8kBaJoLE5yeR5NK';
             })
             .authenticate();
         });
@@ -474,9 +474,9 @@ describe('OAuth2Strategy', function() {
             .req(function(req) {
               request = req;
             
-              req.query = {};
-              req.query.code = 'SplxlOBeZQQYbYS6WxSbIA';
-              req.query.state = 'DkbychwKu8kBaJoLE5yeR5NK';
+              req.queryStringParameters = {};
+              req.queryStringParameters.code = 'SplxlOBeZQQYbYS6WxSbIA';
+              req.queryStringParameters.state = 'DkbychwKu8kBaJoLE5yeR5NK';
               req.session = {};
               req.session['oauth2:example'] = {};
               req.session['oauth2:example']['state'] = 'DkbychwKu8kBaJoLE5yeR5NK';
