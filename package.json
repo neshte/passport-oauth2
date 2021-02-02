@@ -1,5 +1,5 @@
 {
-  "name": "passport-oauth2",
+  "name": "passport-oauth2-aws-lambda",
   "version": "1.5.0",
   "description": "OAuth 2.0 authentication strategy for Passport.",
   "keywords": [
@@ -19,10 +19,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jaredhanson/passport-oauth2.git"
+    "url": "git://github.com/neshte/passport-oauth2-aws-lambda.git"
   },
   "bugs": {
-    "url": "http://github.com/jaredhanson/passport-oauth2/issues"
+    "url": "http://github.com/neshte/passport-oauth2-aws-lambda/issues"
   },
   "license": "MIT",
   "licenses": [
